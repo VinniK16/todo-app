@@ -1,6 +1,6 @@
 .app-title {
     text-align: center;
-    font-family:cursive;
+    font-family:'Poppins', sans-serif;
     font-size: 40px;
 }
 
@@ -10,7 +10,7 @@
     border-width: 3px;
     box-shadow: 1px 1px 2px;
     margin: 10px ;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     border-radius: 8px;
     padding: 5px;
@@ -49,37 +49,37 @@
     height: 30px;
     margin-left: 15px;
     margin-right: 8px;
-    flex-shrink: 0; /* prevent it from shrinking */
+    flex-shrink: 0; 
     accent-color: rgb(3, 168, 3);
     margin-bottom: 7px;
 }
   
 .task-text {
-    flex: 1; /* take up available space */
+    flex: 1;
     min-width: 0;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
     font-size: 19px;
 }
   
 
 .priority-LOW {
     color: rgb(6, 235, 21);
-    font-family:cursive;
+    font-family:'Poppins', sans-serif;
 }
 
 .priority-MEDIUM {
     color: rgb(245, 221, 6);
-    font-family:cursive;
+    font-family:'Poppins', sans-serif;
 }
 
 .priority-HIGH {
     color: rgb(190, 6, 43);
-    font-family:cursive;
+    font-family:'Poppins', sans-serif;
 }
 
 .stats {
     margin-top: 20px;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
     margin-left: 15px;
   }
 
@@ -90,7 +90,7 @@ body {
 }
   
 .delete {
-    font-family:cursive;
+    font-family:'Poppins', sans-serif;
     font-size: 15px;
     border-radius: 9px;
     margin: 0 10px;
@@ -105,7 +105,7 @@ body {
 
 .filters button {
     margin-left: 13px;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
     border-radius: 9px;
     font-size: 18px;
     
@@ -119,7 +119,7 @@ body {
 
 .empty-state {
     margin-left: 15px;
-    font-family: cursive;
+    font-family: 'Poppins', sans-serif;
 }
 
 .todo-container {
