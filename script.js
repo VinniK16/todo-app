@@ -1,6 +1,5 @@
 let input = document.getElementById("to-do input");
 let addBtn = document.getElementById("addButton");
-let prioritySelect = document.getElementById("selectPriority");
 let todolist = document.getElementById("todolist");
 
 addBtn.addEventListener('click', function(){
@@ -8,7 +7,6 @@ addBtn.addEventListener('click', function(){
     if(TaskText === "") {
         alert("Please Enter a Task");
     } else {
-        let priority = prioritySelect.value;
 
         let emptyState = document.querySelector(".empty-state");
         if (emptyState) {
@@ -22,14 +20,16 @@ addBtn.addEventListener('click', function(){
         itemDiv.innerHTML = `
             <input type="checkbox" class="todo-checkbox"/>  
             <div class="task-text">${TaskText}</div>
-            <div class="priority-${priority}">${priority}</div>
             <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
         `;
 
         todolist.appendChild(itemDiv); 
         updateStats();
         saveTasks(); 
         input.value = "";
+
+        count++;
     }
 });
 
@@ -50,6 +50,18 @@ todolist.addEventListener('change', function (event) {
 todolist.addEventListener('click', function (event) {
     const item = event.target.closest('.todo-item');
 
+    //edit
+    if(event.target.classList.contains('edit')) {
+        const taskTextDiv = item.querySelector('.task-text');
+        const oldText = taskTextDiv.textContent;
+
+        const newText = prompt("Edit your task:", oldText);
+        if (newText !== null && newText.trim() !== "") {
+            taskTextDiv.textContent = newText.trim();
+            saveTasks();
+        }
+    }
+
     //delete
     if (event.target.classList.contains('delete')) {
         item.remove();
@@ -60,7 +72,7 @@ todolist.addEventListener('click', function (event) {
         if (document.querySelectorAll(".todo-item").length === 0) {
             const emptyDiv = document.createElement("div");
             emptyDiv.classList.add("empty-state");
-            emptyDiv.innerText = "Great job — nothing left to do! ✨";
+            emptyDiv.innerHTML = "<b>All tasks cleared. Want to add something new?✨📝</b>";
             todolist.appendChild(emptyDiv);
         }
     }
@@ -112,8 +124,8 @@ function loadTasks() {
         itemDiv.innerHTML = `
             <input type="checkbox" class="todo-checkbox" ${task.completed ? "checked" : ""}/>  
             <div class="task-text">${task.text}</div>
-            <div class="priority-${task.priority}">${task.priority}</div>
             <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
         `;
 
         const checkbox = itemDiv.querySelector(".todo-checkbox");
@@ -159,5 +171,3 @@ todolist.addEventListener('change', function (event) {
 });
 
 loadTasks(); 
-
-
