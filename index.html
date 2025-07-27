@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>To Do App</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="app-container">
+            <h1 class="app-title"><b>MY WORKLIST</b></h1>
+            <div class="todo-container">
+                <div class="input-section">
+                    <input type="text" id="to-do input" placeholder="Enter Task">
+                    <button id="addButton">ADD Task</button>
+                </div>
+
+                <div class="stats"><b>
+                    Total: <span id="total-tasks">0</span> | 
+                    Pending: <span id="pending-tasks">0</span> |
+                    Completed: <span id="completed-tasks">0</span> |
+                    Completion Rate: <span id="completion-rate">0%</span>
+                    </b>
+                </div>
+                
+                <div class="filters">
+                    <button onclick="filterTasks('all')">All</button>
+                    <button onclick="filterTasks('completed')">Completed</button>
+                    <button onclick="filterTasks('pending')">Pending</button>
+                </div>
+                
+                <div id="todolist" class="todo-list">
+                    <div class="empty-state"><b>All tasks cleared. Want to add something new?✨📝</b></div>
+                </div>
+              
+            </div>
+        </div>
+
+        
+          
+
+        <script src="script.js"></script>
+    </body>
+</html>
